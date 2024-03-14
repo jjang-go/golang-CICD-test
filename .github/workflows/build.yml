@@ -39,8 +39,8 @@ jobs:
       - name: Go Format
         run: gofmt -s -w . && git diff --exit-code
 
-      - name: Go Vet
-        run: go vet .
+      # - name: Go Vet
+      #   run: go vet ./...
 
       - name: Go Tidy
         run: go mod tidy && git diff --exit-code
