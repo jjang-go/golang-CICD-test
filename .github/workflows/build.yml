@@ -68,10 +68,3 @@ jobs:
       - name: Go Benchmark
         if: ${{ !inputs.skipTests }}
         run: go test -v -shuffle=on -run=- -bench=. -benchtime=1x ./...
-
-      - name: Upload Artifact # coverage 결과를 GitHub에 저장
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage-report
-          path: ./coverage.txt
-          retention-days: 7 # 7일 후에 삭제
